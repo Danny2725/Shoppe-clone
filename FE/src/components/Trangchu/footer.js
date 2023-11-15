@@ -415,7 +415,7 @@ export const Footer = () => {
       </div>
       <div className="footer-license">
         <img
-          src="./assets/img/bôcngthuong.png"
+          src="./asets/images/bocongthuong.png"
           alt="Bản quyền"
           className="footer-license-img"
         />
@@ -423,7 +423,7 @@ export const Footer = () => {
       <div className="footer-address">
         <p>
           © 2015 - Bản quyền thuộc về
-          <a href="http://www.facebook.com/tuanshit">Tuân Viu</a>
+          <a href="https://www.facebook.com/tranquan.ttdt.usec/">Thanh Thủy</a>
         </p>
       </div>
     </div>

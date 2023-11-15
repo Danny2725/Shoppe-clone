@@ -1,8 +1,22 @@
-import React from "react";
-import { useSelector } from "react-redux";
-import { selectProducts } from "../../redux/features/prodSlice";
+import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
+import { selectProducts } from '../../redux/features/prodSlice';
+import ProductDetail from '../item/ProductDetail';
+
 export const Container = () => {
   const products = useSelector(selectProducts);
+  const [selectedProduct, setSelectedProduct] = useState(null);
+
+  // Xử lý sự kiện click cho một sản phẩm
+  const handleProductClick = (product) => {
+    // Đặt sản phẩm được chọn
+    setSelectedProduct(product);
+  };
+
+  // Nếu có sản phẩm được chọn, render component ProductDetail
+  if (selectedProduct) {
+    return <ProductDetail product={selectedProduct} />;
+  }
   return (
     <div className="app__container">
       <div className="grid">
@@ -104,7 +118,7 @@ export const Container = () => {
             <div className="home-product">
               <div className="grid__row">
                 {products.map((product) => (
-                  <div className="grid__column-2-4" key={product.id}>
+                  <div className="grid__column-2-4" key={product.id} onClick={() => handleProductClick(product)}>
                     <a className="home-product-item" href="#">
                       <div
                         className="home-product-item__img"

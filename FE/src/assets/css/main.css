@@ -1076,6 +1076,10 @@
     background-color: rgba(255, 216, 64, 0.95);
     text-align: center;
     border-top-right-radius: 2px;
+    display: flex;
+    align-content: stretch;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 .home-product-item__sale-off::after {
     content: "";
